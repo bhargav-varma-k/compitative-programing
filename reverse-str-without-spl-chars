@@ -1,0 +1,24 @@
+const s = 'xyz!t@a1b-c2d';
+//d2c!b@1at-zyx
+//https://jsfiddle.net/bhargavvarma/m8roh0y3
+
+function reverseStr(S){
+  let newArr = '';
+  let i= S.length-1;
+  let j= 0;
+  let pattern = /[a-zA-Z0-9]/;
+  while(i >= 0){
+  	if(pattern.test(S[i])){
+    	if(pattern.test(S[j])){
+      	newArr  += S[i];
+      }else{
+      	newArr += S[j];
+        i++;
+      }
+      j++;
+    }
+    i--;
+  }
+  return newArr;
+}
+console.log(reverseStr(s));
