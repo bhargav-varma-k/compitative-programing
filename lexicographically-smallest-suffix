@@ -1,0 +1,31 @@
+// Input:  aacb 3     -> [aacb, acb, b, cb] After sorting the suffexis
+// Output: b
+
+// Sample code to perform I/O:
+
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+var stdin_input = "";
+
+process.stdin.on("data", function (input) {
+    stdin_input += input;                               // Reading input from STDIN
+});
+
+process.stdin.on("end", function () {
+   main(stdin_input);
+});
+
+function main(input) {
+    const line = input.split(' ');
+    const str = line[0];
+    const smallSuffeixK = parseInt(line[1]);
+    let arr = [];
+    let i = str.length-1;
+    while(i >= 0){
+        arr.push(str.slice(i));
+        i--;
+    };
+    arr.sort();
+    process.stdout.write(`${arr[smallSuffeixK-1]}\n`);       // Writing output to STDOUT
+}
+
