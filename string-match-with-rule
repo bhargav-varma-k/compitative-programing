@@ -1,3 +1,5 @@
+//https://jsfiddle.net/htcsfqn4/1/
+
 Write a single function that takes two string inputs and returns a single string of either "TRUE"
 or "FALSE". The function should determine if the first input is equal to the second input when
 you are able to modify the first string input. The following modifications to the first string input
