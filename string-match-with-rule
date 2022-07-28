@@ -14,15 +14,17 @@ are permitted: letters may be capitalized, or discarded, but otherwise not chang
 
 
 function sameString(first, second){
-let count = 0;
+let count = 0, index = 0;
 	for(let i=0; i < second.length; i++){
-  	for(let j = i; j < first.length; j++){
+  	for(let j = index; j < first.length; j++){
     	if(second[i] == first[j] || 
       second[i] == first[j].toUpperCase()){
+      	index = j+1;
       	count++;
+        break;
       }
     }
   }
   if(count == second.length) return 'TRUE';
-  else return 'FALSE';
+  return 'FALSE';
 }
