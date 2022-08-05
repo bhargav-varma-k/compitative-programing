@@ -1,0 +1,60 @@
+// https://jsfiddle.net/gcxmrtq8/17/
+// Code update required 
+
+var input = {
+
+  id: '0001',
+
+  type: 'nisum',
+
+  name: 'bakery',
+
+  batteries: {
+
+    name: 1
+
+  },
+
+  batter: {
+
+    id: 1,
+
+    type: "123",
+
+    another: {
+
+      anotherId: 1,
+
+      oneMore: {
+
+        oneMoreId: 2
+
+      }
+
+    }
+
+  }
+ 
+}
+var newObj = {};
+function test(obj, check){
+	if(check && Object.keys(obj).length == 1){ 
+  	return Object.keys(obj)[0];
+  }
+  for(let [key, value] of Object.entries(obj)){
+      if(typeof value == 'object'){
+      	key = key+'_'+test(value, true);
+        newObj[key] = Object.values(value)[Object.values(value).length-1];
+      }else{
+      	newObj[key] = value;
+      }
+  }
+  return newObj;
+}
+
+console.log(test(input));
+
+
+
+
+
