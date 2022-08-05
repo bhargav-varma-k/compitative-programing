@@ -1,0 +1,22 @@
+// https://jsfiddle.net/fjhyeb32/2/
+// (())))  - 2
+// (((())	 - 2
+//)))(((	- 6
+
+function bracketsMatch(str){
+	let leftIdx = 0;
+  let rightIdx = 0;
+  for(let i=0; i< str.length; i++){
+  		if(str[i] == '('){
+      	leftIdx++;
+      }else{
+      	if(leftIdx > 0){
+        	leftIdx--;
+        }else{
+        	rightIdx++;
+        }
+      }
+  }
+  return leftIdx + rightIdx;
+}
+console.log(bracketsMatch(')))((('));
